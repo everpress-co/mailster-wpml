@@ -3,7 +3,7 @@ Contributors: everpress, revaxarts
 Tags: mailer
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 Author: EverPress
 Author URI: https://mailster.co
@@ -23,6 +23,9 @@ This add on help to integrate the [Mailster Newsletter Plugin for WordPress](htt
 3. Go to Settings => Newsletter => Delivery and select the `DummyMailer` tab
 
 == Changelog ==
+
+= 0.2 =
+* various fixes and improvements
 
 = 0.1 =
 * initial release
