@@ -86,6 +86,7 @@ class MailsterWPML {
 			add_filter( 'mailster_placeholder_custom', array( &$this, 'replace_campaign_strings' ), 1, 3 );
 
 			add_action( 'mailster_frontpage',array( &$this, 'frontpage' ) );
+			add_action( 'mailster_subscriber_after_meta',array( &$this, 'after_meta' ) );
 
 		}
 
@@ -183,6 +184,26 @@ class MailsterWPML {
 		}
 
 		wp_dequeue_script( 'post-edit-languages' );
+	}
+
+
+	public function after_meta( $subscriber ) {
+
+		$lang = mailster( 'subscribers' )->meta( $subscriber->ID, 'lang' );
+
+		?>
+		<div class="detail">
+		<label for="mailster_lang"><?php esc_html_e( 'Language', 'mailster-wpml' );?>:</label>
+		<select name="mailster_data[lang]" id="mailster_lang">
+			<option value=""><?php esc_html_e( 'not defined', 'mailster-wpml' ) ?></option>
+		<?php $languages = icl_get_languages();
+		foreach ( $languages as $id => $language ) {
+			?>
+			<option value="<?php echo $language['code'] ?>" <?php selected( $language['code'], $lang ) ?> ><?php echo $language['translated_name'] ?> (<?php echo $language['code'] ?>)</option>
+		<?php } ?>
+		</select>
+		</div>
+		<?php
 	}
 
 	public function text_tab() {

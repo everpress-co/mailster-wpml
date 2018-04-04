@@ -3,7 +3,7 @@ Contributors: everpress, revaxarts
 Tags: mailer
 Requires at least: 3.8
 Tested up to: 4.9
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv2 or later
 Author: EverPress
 Author URI: https://mailster.co
@@ -12,7 +12,9 @@ Author URI: https://mailster.co
 
 This add on is currently in beta phase and should not be used on a production site!
 
-This add on help to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML) with WPML. Requires at least version 2.3 of the Mailster Plugin
+This add on helps to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML) with WPML. Requires at least version 2.3 of the Mailster Plugin.
+
+Please follow the setup guide on our [knowledge base](https://kb.mailster.co/using-multi-language-newsletter-with-wpml/)
 
 > This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML)
 
@@ -23,6 +25,9 @@ This add on help to integrate the [Mailster Newsletter Plugin for WordPress](htt
 3. Go to Settings => Newsletter => Delivery and select the `DummyMailer` tab
 
 == Changelog ==
+
+= 0.3 =
+* added drop down to change language for individual subscribers.
 
 = 0.2 =
 * various fixes and improvements
