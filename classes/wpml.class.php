@@ -87,9 +87,26 @@ class MailsterWPML {
 
 			add_action( 'mailster_frontpage',array( &$this, 'frontpage' ) );
 			add_action( 'mailster_subscriber_after_meta',array( &$this, 'after_meta' ) );
+			add_action( '_mailster_get_last_post_args',array( &$this, 'get_last_post_args' ), 10, 6 );
 
 		}
 
+	}
+
+
+	public function get_last_post_args( $args, $offset, $post_type, $term_ids, $campaign_id, $subscriber_id ) {
+
+		global $sitepress;
+		if ( $campaign_id ) {
+			$language = apply_filters( 'wpml_post_language_details', null, $campaign_id );
+			if ( ! is_wp_error( $language ) ) {
+				$sitepress->switch_lang( $language['language_code'] );
+			}
+		}
+
+		$args['suppress_filters'] = false;
+
+		return $args;
 	}
 
 	public function add_language( $entry ) {
@@ -286,10 +303,10 @@ class MailsterWPML {
 			if ( $homepage == $post_id ) {
 				continue;
 			}
-			$pagename = str_replace( 'index.php/', '', untrailingslashit( str_replace( trailingslashit( get_bloginfo( 'url' ) ), '', get_permalink( $post_id ) ) ) );
+			$pagename = get_page_uri( $post_id );
 			if ( 3 == $language_negotiation_type ) {
 				$pagename = untrailingslashit( remove_query_arg( 'lang', $pagename ) );
-				$rules[ '(index\.php/)?(' . preg_quote( $pagename ) . ')/(' . $slugs . ')/?([a-f0-9]{32})?/?([a-z0-9]*)?/?(lang=' . $lang . ')?' ] = 'index.php?pagename=' . preg_replace( '#\.html$#', '', $pagename ) . '&_mailster_page=$matches[3]&_mailster_hash=$matches[4]&_mailster_extra=$matches[5]';
+				$rules[ '(index\.php/)?(' . preg_quote( $pagename ) . ')/(' . $slugs . ')?/?([a-f0-9]{32})?/?([a-z0-9]*)?' ] = 'index.php?pagename=' . preg_replace( '#\.html$#', '', $pagename ) . '&_mailster_page=$matches[3]&_mailster_hash=$matches[4]&_mailster_extra=$matches[5]';
 
 			} elseif ( 2 == $language_negotiation_type ) {
 

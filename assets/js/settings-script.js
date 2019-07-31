@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
 	var textsnav = $('#wpml-text-nav'),
 		textstabs = $('.wpml-text-tab');

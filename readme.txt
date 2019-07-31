@@ -1,9 +1,9 @@
 === Mailster WPML ===
-Contributors: everpress, revaxarts
+Contributors: everpress
 Tags: mailer
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 0.3
+Tested up to: 5.2
+Stable tag: 0.4
 License: GPLv2 or later
 Author: EverPress
 Author URI: https://mailster.co
@@ -25,6 +25,9 @@ Please follow the setup guide on our [knowledge base](https://kb.mailster.co/usi
 3. Go to Settings => Newsletter => Delivery and select the `DummyMailer` tab
 
 == Changelog ==
+
+= 0.4 =
+* fixed: permalink issues with 3rd negotiation method.
 
 = 0.3 =
 * added drop down to change language for individual subscribers.
