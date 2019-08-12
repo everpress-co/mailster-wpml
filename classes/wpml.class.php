@@ -9,7 +9,7 @@ class MailsterWPML {
 	public function __construct() {
 
 		$this->plugin_path = plugin_dir_path( MAILSTER_WPML_FILE );
-		$this->plugin_url = plugin_dir_url( MAILSTER_WPML_FILE );
+		$this->plugin_url  = plugin_dir_url( MAILSTER_WPML_FILE );
 
 		register_activation_hook( MAILSTER_WPML_FILE, array( &$this, 'activate' ) );
 		register_deactivation_hook( MAILSTER_WPML_FILE, array( &$this, 'deactivate' ) );
@@ -67,27 +67,27 @@ class MailsterWPML {
 	 */
 	public function init() {
 
-		if ( ! function_exists( 'mailster' ) || ! defined( 'ICL_LANGUAGE_CODE' )  ) {
+		if ( ! function_exists( 'mailster' ) || ! defined( 'ICL_LANGUAGE_CODE' ) ) {
 
 		} else {
 
 			add_filter( 'mailster_redirect_to', array( &$this, 'redirect_to' ), 1, 3 );
-			add_filter( 'is_mailster_newsletter_homepage', array( &$this, 'is_mailster_newsletter_homepage' ),10, 2 );
+			add_filter( 'is_mailster_newsletter_homepage', array( &$this, 'is_mailster_newsletter_homepage' ), 10, 2 );
 			add_filter( 'mailster_rewrite_rules', array( &$this, 'mailster_rewrite_rules' ) );
 			add_filter( 'admin_enqueue_scripts', array( &$this, 'wp_dequeue_script' ) );
 			add_filter( 'mailster_section_tab_texts', array( &$this, 'text_tab' ) );
 			add_action( 'mailster_text', array( &$this, 'mailster_text' ), 1, 3 );
 
 			add_filter( 'mailster_setting_sections', array( &$this, 'settings_tab' ), 1 );
-			add_action( 'mailster_section_tab_wpml_texts',array( &$this, 'text_tab' ) );
-			add_action( 'admin_enqueue_scripts',array( &$this, 'admin_enqueue_scripts' ) );
-			add_action( 'mailster_verify_subscriber',array( &$this, 'add_language' ) );
+			add_action( 'mailster_section_tab_wpml_texts', array( &$this, 'text_tab' ) );
+			add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
+			add_action( 'mailster_verify_subscriber', array( &$this, 'add_language' ) );
 
 			add_filter( 'mailster_placeholder_custom', array( &$this, 'replace_campaign_strings' ), 1, 3 );
 
-			add_action( 'mailster_frontpage',array( &$this, 'frontpage' ) );
-			add_action( 'mailster_subscriber_after_meta',array( &$this, 'after_meta' ) );
-			add_action( '_mailster_get_last_post_args',array( &$this, 'get_last_post_args' ), 10, 6 );
+			add_action( 'mailster_frontpage', array( &$this, 'frontpage' ) );
+			add_action( 'mailster_subscriber_after_meta', array( &$this, 'after_meta' ) );
+			add_action( '_mailster_get_last_post_args', array( &$this, 'get_last_post_args' ), 10, 6 );
 
 		}
 
@@ -165,7 +165,7 @@ class MailsterWPML {
 			$lang = defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : $this->get_default_language();
 		}
 
-		$string = isset( $mailster_wpml_texts[ $lang ][ $option ] ) ? $mailster_wpml_texts[ $lang ][ $option ] : $fallback ;
+		$string = isset( $mailster_wpml_texts[ $lang ][ $option ] ) ? $mailster_wpml_texts[ $lang ][ $option ] : $fallback;
 
 		return apply_filters( 'mailster_wpml_text', $string, $option, $fallback );
 
@@ -174,12 +174,12 @@ class MailsterWPML {
 	public function replace_campaign_strings( $args, $campaign_id, $subscriber_id ) {
 
 		if ( $subscriber_id && $lang = $this->get_subscriber_lang( $subscriber_id ) ) {
-			$this->temp_lang = $lang;
+			$this->temp_lang            = $lang;
 			$args['webversionlinktext'] = mailster_text( 'webversion' );
-			$args['unsublinktext'] = mailster_text( 'unsubscribelink' );
-			$args['forwardlinktext'] = mailster_text( 'forward' );
-			$args['profilelinktext'] = mailster_text( 'profile' );
-			$this->temp_lang = null;
+			$args['unsublinktext']      = mailster_text( 'unsubscribelink' );
+			$args['forwardlinktext']    = mailster_text( 'forward' );
+			$args['profilelinktext']    = mailster_text( 'profile' );
+			$this->temp_lang            = null;
 		}
 
 		return $args;
@@ -210,13 +210,14 @@ class MailsterWPML {
 
 		?>
 		<div class="detail">
-		<label for="mailster_lang"><?php esc_html_e( 'Language', 'mailster-wpml' );?>:</label>
+		<label for="mailster_lang"><?php esc_html_e( 'Language', 'mailster-wpml' ); ?>:</label>
 		<select name="mailster_data[lang]" id="mailster_lang">
-			<option value=""><?php esc_html_e( 'not defined', 'mailster-wpml' ) ?></option>
-		<?php $languages = icl_get_languages();
+			<option value=""><?php esc_html_e( 'not defined', 'mailster-wpml' ); ?></option>
+		<?php
+		$languages = icl_get_languages();
 		foreach ( $languages as $id => $language ) {
 			?>
-			<option value="<?php echo $language['code'] ?>" <?php selected( $language['code'], $lang ) ?> ><?php echo $language['translated_name'] ?> (<?php echo $language['code'] ?>)</option>
+			<option value="<?php echo $language['code']; ?>" <?php selected( $language['code'], $lang ); ?> ><?php echo $language['translated_name']; ?> (<?php echo $language['code']; ?>)</option>
 		<?php } ?>
 		</select>
 		</div>
@@ -276,7 +277,7 @@ class MailsterWPML {
 			$mailster_wpml_texts[ $default ] = get_option( 'mailster_texts', array() );
 		}
 
-		$string = isset( $mailster_wpml_texts[ $default ][ $option ] ) ? $mailster_wpml_texts[ $default ][ $option ] : $fallback ;
+		$string = isset( $mailster_wpml_texts[ $default ][ $option ] ) ? $mailster_wpml_texts[ $default ][ $option ] : $fallback;
 
 		return $string;
 
@@ -284,10 +285,10 @@ class MailsterWPML {
 
 	public function get_translation_post_ids( $post ) {
 		global $sitepress;
-		$post = get_post( $post );
-		$trid = $sitepress->get_element_trid( $post->ID );
+		$post         = get_post( $post );
+		$trid         = $sitepress->get_element_trid( $post->ID );
 		$translations = $sitepress->get_element_translations( $trid );
-		$ids = wp_list_pluck( $translations, 'element_id' );
+		$ids          = wp_list_pluck( $translations, 'element_id' );
 		return $ids;
 	}
 
@@ -295,9 +296,9 @@ class MailsterWPML {
 
 		$slugs = implode( '|', (array) mailster_option( 'slugs', array( 'confirm', 'subscribe', 'unsubscribe', 'profile' ) ) );
 
-		$homepage = mailster_option( 'homepage' );
+		$homepage                  = mailster_option( 'homepage' );
 		$language_negotiation_type = apply_filters( 'wpml_setting', false, 'language_negotiation_type' );
-		$translations = $this->get_translation_post_ids( $homepage );
+		$translations              = $this->get_translation_post_ids( $homepage );
 
 		foreach ( $translations as $lang => $post_id ) {
 			if ( $homepage == $post_id ) {
@@ -326,7 +327,7 @@ class MailsterWPML {
 		if ( $is_homepage ) {
 			return true;
 		}
-		$homepage = mailster_option( 'homepage' );
+		$homepage     = mailster_option( 'homepage' );
 		$translations = $this->get_translation_post_ids( $homepage );
 		return $post && in_array( $post->ID, $translations );
 	}
