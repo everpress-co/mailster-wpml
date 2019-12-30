@@ -2,7 +2,7 @@
 Contributors: everpress
 Tags: mailer
 Requires at least: 3.8
-Tested up to: 5.2
+Tested up to: 5.3
 Stable tag: 0.4
 License: GPLv2 or later
 Author: EverPress
@@ -12,11 +12,11 @@ Author URI: https://mailster.co
 
 This add on is currently in beta phase and should not be used on a production site!
 
-This add on helps to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML) with WPML. Requires at least version 2.3 of the Mailster Plugin.
+This add on helps to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme) with WPML. Requires at least version 2.3 of the Mailster Plugin.
 
-Please follow the setup guide on our [knowledge base](https://kb.mailster.co/using-multi-language-newsletter-with-wpml/)
+Please follow the setup guide on our [knowledge base](https://kb.mailster.co/using-multi-language-newsletter-with-wpml/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme)
 
-> This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML)
+> This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme)
 
 == Installation ==
 
@@ -38,8 +38,6 @@ Please follow the setup guide on our [knowledge base](https://kb.mailster.co/usi
 = 0.1 =
 * initial release
 
-== Upgrade Notice ==
+== Additional Info ==
 
-== Additional Info One ==
-
-This Plugin requires [Mailster](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML).
+This Plugin requires [Mailster](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme).
