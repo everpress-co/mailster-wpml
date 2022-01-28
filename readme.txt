@@ -2,7 +2,7 @@
 Contributors: everpress
 Tags: mailer
 Requires at least: 3.8
-Tested up to: 5.8
+Tested up to: 5.9
 Stable tag: 0.4
 License: GPLv2 or later
 Author: EverPress
