@@ -9,8 +9,6 @@ License: GPLv2 or later
 
 ## Description
 
-This add on is currently in beta phase and should not be used on a production site!
-
 This add on helps to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme) with WPML. Requires at least version 2.3 of the Mailster Plugin.
 
 Please follow the setup guide on our [knowledge base](https://kb.mailster.co/using-multi-language-newsletter-with-wpml/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme)
