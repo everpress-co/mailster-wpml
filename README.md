@@ -1,6 +1,6 @@
 # Mailster WPML
 
-Contributors: everpress  
+Contributors: everpress, xaverb  
 Tags: mailer  
 Requires at least: 3.8  
 Tested up to: 6.0  
