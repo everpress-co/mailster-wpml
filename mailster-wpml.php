@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Mailster WPML
-Plugin URI: https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=plugin
+Plugin URI: https://mailster.co/?utm_campaign=wporg&utm_source=wordpress.org&utm_medium=plugin&utm_term=WPML
 Description: This add on helps to integrate the Mailster with WPML
 Version: 0.4
 Author: EverPress
