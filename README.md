@@ -1,10 +1,10 @@
 # Mailster WPML
 
-Contributors: everpress, xaverb  
+Contributors: everpress, mailster, xaverb  
 Tags: mailer  
 Requires at least: 3.8  
-Tested up to: 6.0  
-Stable tag: 0.4  
+Tested up to: 6.5  
+Stable tag: 0.4.0  
 License: GPLv2 or later
 
 ## Description
@@ -23,21 +23,21 @@ Please follow the setup guide on our [knowledge base](https://kb.mailster.co/usi
 
 ## Changelog
 
-### 0.4
+### 0.4.0
 
--   fixed: permalink issues with 3rd negotiation method.
+- fixed: permalink issues with 3rd negotiation method.
 
 ### 0.3
 
--   added drop down to change language for individual subscribers.
+- added drop down to change language for individual subscribers.
 
 ### 0.2
 
--   various fixes and improvements
+- various fixes and improvements
 
 ### 0.1
 
--   initial release
+- initial release
 
 ## Additional Info
 
