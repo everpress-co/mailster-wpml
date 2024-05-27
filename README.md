@@ -1,21 +1,19 @@
 # Mailster WPML
 
-Contributors: everpress  
+Contributors: everpress, mailster, xaverb  
 Tags: mailer  
 Requires at least: 3.8  
-Tested up to: 5.9  
-Stable tag: 0.4  
+Tested up to: 6.5  
+Stable tag: 0.4.0  
 License: GPLv2 or later
 
 ## Description
 
-This add on is currently in beta phase and should not be used on a production site!
+This add on helps to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=wordpress.org&utm_medium=readme&utm_term=WPML) with WPML. Requires at least version 2.3 of the Mailster Plugin.
 
-This add on helps to integrate the [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme) with WPML. Requires at least version 2.3 of the Mailster Plugin.
+Please follow the setup guide on our [knowledge base](https://kb.mailster.co/using-multi-language-newsletter-with-wpml/?utm_campaign=wporg&utm_source=WPML&utm_medium=readme)
 
-Please follow the setup guide on our [knowledge base](https://kb.mailster.co/using-multi-language-newsletter-with-wpml/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme)
-
-> This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme)
+> This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=wordpress.org&utm_medium=readme&utm_term=WPML)
 
 ## Installation
 
@@ -25,22 +23,22 @@ Please follow the setup guide on our [knowledge base](https://kb.mailster.co/usi
 
 ## Changelog
 
-### 0.4
+### 0.4.0
 
--   fixed: permalink issues with 3rd negotiation method.
+- fixed: permalink issues with 3rd negotiation method.
 
 ### 0.3
 
--   added drop down to change language for individual subscribers.
+- added drop down to change language for individual subscribers.
 
 ### 0.2
 
--   various fixes and improvements
+- various fixes and improvements
 
 ### 0.1
 
--   initial release
+- initial release
 
 ## Additional Info
 
-This Plugin requires [Mailster](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+WPML&utm_medium=readme).
+This Plugin requires [Mailster](https://mailster.co/?utm_campaign=wporg&utm_source=wordpress.org&utm_medium=readme&utm_term=WPML).
